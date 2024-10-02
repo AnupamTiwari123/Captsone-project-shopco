@@ -52,7 +52,7 @@ function ProductInfo({ user }) {
         try {
             const quantity = 1;
             await axios.post(
-                "http://localhost:3000/api/cart/add",
+                `${import.meta.env.VITE_API_BASE_URL}/api/cart/add`,
                 // eslint-disable-next-line react/prop-types
                 { userId: user._id, productId, quantity, price, image },
                 {
@@ -73,7 +73,7 @@ function ProductInfo({ user }) {
 
         try {
             await axios.post(
-                'http://localhost:3000/api/wishlist',
+                `${import.meta.env.VITE_API_BASE_URL}/api/wishlist`,
                 { productId, image },
                 {
                     headers: {

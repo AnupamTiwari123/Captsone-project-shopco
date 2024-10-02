@@ -16,7 +16,7 @@ const Cart = ({ user }) => {
 
             try {
                 // eslint-disable-next-line react/prop-types
-                const response = await axios.get(`http://localhost:3000/api/cart/get/${user._id}`, {
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/cart/get/${user._id}`, {
                     withCredentials: true,
                 });
                 setData(response.data);
@@ -34,7 +34,7 @@ const Cart = ({ user }) => {
         try {
             const response = await axios.put(
                 // eslint-disable-next-line react/prop-types
-                `http://localhost:3000/api/cart/increase/${user._id}`,
+                `${import.meta.env.VITE_API_BASE_URL}/api/cart/increase/${user._id}`,
                 { itemId },
                 { withCredentials: true }
             );

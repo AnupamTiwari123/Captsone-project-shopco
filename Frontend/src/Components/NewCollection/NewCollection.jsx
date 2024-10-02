@@ -7,7 +7,7 @@ function NewCollection() {
     const [newCollection, setNewCollection] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/newarrivals')
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/newarrivals`)
             .then((response) => {
                 setNewCollection(response.data);
             })

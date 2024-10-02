@@ -9,7 +9,7 @@ const ProductReviewContainer = ({ productId, user }) => {
     const [reviews, setReviews] = useState([]);
 
     const fetchReviews = () => {
-        axios.get(`http://localhost:3000/api/reviews/${productId}`)
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/${productId}`)
             .then(response => setReviews(response.data))
             .catch(error => console.error('Error fetching reviews:', error));
     };

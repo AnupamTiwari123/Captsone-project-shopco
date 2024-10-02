@@ -15,7 +15,7 @@ const Wishlist = ({ user }) => {
 
             const token = Cookies.get('authToken');
             try {
-                const response = await axios.get('http://localhost:3000/api/wishlist', {
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/wishlist`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     },
@@ -35,7 +35,7 @@ const Wishlist = ({ user }) => {
     const handleRemoveFromWishlist = async (wishlistItemId) => {
         const token = Cookies.get('authToken');
         try {
-            await axios.delete(`http://localhost:3000/api/wishlist/${wishlistItemId}`, {
+            await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/wishlist/${wishlistItemId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

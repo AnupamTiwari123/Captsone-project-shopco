@@ -17,7 +17,7 @@ const ReviewForm = ({ productId, user, onReviewAdded }) => {
         try {
             const token = Cookies.get('authToken');
             await axios.post(
-                `http://localhost:3000/api/reviews/${productId}`,
+                `${import.meta.env.VITE_API_BASE_URL}/api/reviews/${productId}`,
                 { rating, comment },
                 {
                     headers: {

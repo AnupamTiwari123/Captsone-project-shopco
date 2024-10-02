@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 function NewArrivals() {
     const [newarrivals, setNewArrivals] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:3000/api/newarrivals')
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/newarrivals`)
             .then(function (response) {
 
                 // console.log(response);

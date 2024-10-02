@@ -11,7 +11,7 @@ const Product = ({ user }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/products`);
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/products`);
                 setProducts(response.data);
                 // console.log(response.data)
             } catch (err) {
@@ -34,7 +34,7 @@ const Product = ({ user }) => {
         try {
             const quantity = 1;
             await axios.post(
-                "http://localhost:3000/api/cart/add",
+                `${import.meta.env.VITE_API_BASE_URL}/api/cart/add`,
                 // eslint-disable-next-line react/prop-types
                 { userId: user._id, productId, quantity, price, image },
                 {
